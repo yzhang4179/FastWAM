@@ -503,7 +503,7 @@ def create_causalwam_idm(
 
         if checkpoint_path in (None, "", "None", "null"):
             logger.info("No checkpoint specified for video expert, using Pretrained WanVideoDiT weights.")
-        elif (not ckpt_missing) and Path(checkpoint_path).exists():
+        elif Path(checkpoint_path).exists():
             logger.info("Loading checkpoint for video expert: %s", checkpoint_path)
             causal_video_expert.load_checkpoint(checkpoint_path)
         else:
